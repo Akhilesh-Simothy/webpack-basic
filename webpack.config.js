@@ -50,7 +50,33 @@ module.exports = {
                     {
                         loader: "file-loader",
                         options: {
-                            outputPath: 'images'
+                            outputPath: '/src/images',
+                            name: "[name].[ext]"
+                        }
+                    },
+                    {
+                        loader: 'image-webpack-loader',
+                        options: {
+                            mozjpeg: {
+                                progressive: true,
+                                quality: 65
+                            },
+                            // optipng.enabled: false will disable optipng
+                            optipng: {
+                                enabled: true,
+                            },
+                            pngquant: {
+                                quality: '65-90',
+                                speed: 4
+                            },
+                            gifsicle: {
+                                interlaced: true,
+                                optimizationLevel: 3
+                            },
+                            // the webp option will enable WEBP
+                            webp: {
+                                quality: 75
+                            }
                         }
                     }
                 ]

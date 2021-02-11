@@ -1,41 +1,73 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $color-light-grey;
+}
+
+
 /*INTRO*/
 .intro {
-  height: 70vh;
+  height: 800px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  background-image: url('../images/cover.jpg');
+  background-image: url("../images/header.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
+  border-bottom: 10px solid $color-orange;
+
+  @include for-tablet {
+    height: 575px;
+  }
 
   @include for-mobile {
-    height: 60vh;
+    height: 400px;
   }
 
   &-content {
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 500px;
 
-    h1 {
-      font-size: 5em;
-      text-transform: uppercase;
-      color: $color-light-grey;
-      letter-spacing: 10px;
+    @include for-tablet {
+      height: 400px;
+    }
+
+    .logo-link {
+      padding-top: 8rem;
+      width: 600px;
+
+      @include for-tablet {
+        width: 500px;
+      }
 
       @include for-mobile {
-        font-size: 3.5em;
+        padding-top: 4rem;
+        width: 320px;
+      }
+
+      img {
+        width: 100%;
       }
     }
 
-    p {
-      font-size: 2em;
-      color: #f5f5f5;
+    h1 {
+      color: $color-white;
+      font-family: $font-barlow;
+      font-weight: 500;
+      font-size: 45px;
+      padding-bottom: 1.5rem;
+      margin-top: 5rem;
 
       @include for-mobile {
-        font-size: 1.5em;
+        font-size: 23px;
+        margin-top: 1.5rem;
       }
     }
   }

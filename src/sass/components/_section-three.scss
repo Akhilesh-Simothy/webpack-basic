@@ -1,5 +1,5 @@
-/*SECTION-2*/
-.second {
+/*SECTION-3*/
+.third {
   width: 100%;
   margin-bottom: 30px;
   display: flex;
@@ -7,20 +7,38 @@
   position: relative;
 
   @include for-mobile {
-    flex-direction: column-reverse;
+    flex-direction: column;
   }
 
-  .text-block-left {
+  .image-block {
+    width: 840px;
+    height: 530px;
+    background-image: url('../images/section3.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+
+    @include for-tablet {
+      height: 400px;
+      width: 50%;
+    }
+
+    @include for-mobile {
+      height: 250px;
+      width: 100%;
+    }
+  }
+
+  .text-block {
     background-color: $color-white;
     height: 460px;
     width: 595px;
     padding: 0 60px;
+    position: absolute;
+    right: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    position: absolute;
-    left: 0;
-    z-index: 555;
 
     @include for-tablet {
       height: 400px;
@@ -39,14 +57,14 @@
       width: 0;
       height: 0;
       border-style: solid;
-      border-width: 25px 0 25px 40px;
-      border-color: transparent transparent transparent $color-white;
+      border-width: 20px 35px 20px 0;
+      border-color: transparent $color-white transparent transparent;
       content: "";
       position: absolute;
       top: 40px;
-      right: -34px;
+      left: -34px;
       display: block;
-      z-index: 666;
+      z-index: 111;
 
       @include for-mobile {
         border-width: 0 30px 35px 30px;
@@ -74,7 +92,7 @@
       }
     }
 
-    .left-list {
+    .right-list {
       padding-left: 40px;
 
       @include for-tablet {
@@ -100,27 +118,6 @@
         }
       }
     }
-  }
 
-  .image-block-right {
-    width: 840px;
-    height: 530px;
-    background-image: url('../images/section2.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    transform: translate(41%, 0%);
-
-    @include for-tablet {
-      height: 400px;
-      width: 50%;
-      transform: translate(100%, 0%);
-    }
-
-    @include for-mobile {
-      height: 250px;
-      width: 100%;
-      transform: translate(0%, 0%);
-    }
   }
 }
